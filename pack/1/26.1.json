@@ -1,0 +1,379 @@
+{
+  "mc_version": "26.1",
+  "mc_version_aliases": [
+    "26.1.1",
+    "26.1.2"
+  ],
+  "comment": "MC 26.1-26.1.2 ship unobfuscated (Mojang names), GLFW input. Before 26.2 the open screen and setScreen live on Minecraft itself, not Minecraft.gui.",
+  "natives": {
+    "classes": {
+      "minecraft_client": "net/minecraft/client/Minecraft",
+      "entity": "net/minecraft/world/entity/Entity",
+      "camera": "net/minecraft/client/Camera",
+      "render_tick_counter": "net/minecraft/client/DeltaTracker",
+      "key_binding": "net/minecraft/client/KeyMapping",
+      "game_options": "net/minecraft/client/Options",
+      "simple_option": "net/minecraft/client/OptionInstance",
+      "client_player": "net/minecraft/client/player/LocalPlayer",
+      "movement_input": "net/minecraft/client/player/ClientInput",
+      "keyboard_input": "net/minecraft/client/player/KeyboardInput",
+      "player_input": "net/minecraft/world/entity/player/Input",
+      "vec2f": "net/minecraft/world/phys/Vec2",
+      "screen": "net/minecraft/client/gui/screens/Screen",
+      "status_effect_instance": "net/minecraft/world/effect/MobEffectInstance",
+      "registry_entry": "net/minecraft/core/Holder",
+      "entity_attributes": "net/minecraft/world/entity/ai/attributes/Attributes",
+      "attribute_instance": "net/minecraft/world/entity/ai/attributes/AttributeInstance"
+    },
+    "methods": {
+      "minecraft_client.get_instance": {
+        "name": "getInstance",
+        "descriptor": "()Lnet/minecraft/client/Minecraft;"
+      },
+      "minecraft_client.get_render_tick_counter": {
+        "name": "getDeltaTracker",
+        "descriptor": "()Lnet/minecraft/client/DeltaTracker;"
+      },
+      "minecraft_client.set_screen": {
+        "name": "setScreen",
+        "descriptor": "(Lnet/minecraft/client/gui/screens/Screen;)V"
+      },
+      "entity.get_yaw": {
+        "name": "getYRot",
+        "descriptor": "()F"
+      },
+      "entity.get_pitch": {
+        "name": "getXRot",
+        "descriptor": "()F"
+      },
+      "entity.set_yaw": {
+        "name": "setYRot",
+        "descriptor": "(F)V"
+      },
+      "entity.set_pitch": {
+        "name": "setXRot",
+        "descriptor": "(F)V"
+      },
+      "entity.get_x": {
+        "name": "getX",
+        "descriptor": "()D"
+      },
+      "entity.get_y": {
+        "name": "getY",
+        "descriptor": "()D"
+      },
+      "entity.get_z": {
+        "name": "getZ",
+        "descriptor": "()D"
+      },
+      "entity.is_sprinting": {
+        "name": "isSprinting",
+        "descriptor": "()Z"
+      },
+      "entity.set_sprinting": {
+        "name": "setSprinting",
+        "descriptor": "(Z)V"
+      },
+      "render_tick_counter.get_tick_progress": {
+        "name": "getGameTimeDeltaPartialTick",
+        "descriptor": "(Z)F"
+      },
+      "key_binding.is_pressed": {
+        "name": "isDown",
+        "descriptor": "()Z"
+      },
+      "key_binding.set_pressed": {
+        "name": "setDown",
+        "descriptor": "(Z)V"
+      },
+      "game_options.get_mouse_sensitivity": {
+        "name": "sensitivity",
+        "descriptor": "()Lnet/minecraft/client/OptionInstance;"
+      },
+      "simple_option.get_value": {
+        "name": "get",
+        "descriptor": "()Ljava/lang/Object;"
+      },
+      "living_entity.get_status_effects": {
+        "name": "getActiveEffects",
+        "descriptor": "()Ljava/util/Collection;"
+      },
+      "living_entity.set_status_effect": {
+        "name": "forceAddEffect",
+        "descriptor": "(Lnet/minecraft/world/effect/MobEffectInstance;Lnet/minecraft/world/entity/Entity;)V"
+      },
+      "living_entity.remove_status_effect": {
+        "name": "removeEffect",
+        "descriptor": "(Lnet/minecraft/core/Holder;)Z"
+      },
+      "living_entity.get_attribute_instance": {
+        "name": "getAttribute",
+        "descriptor": "(Lnet/minecraft/core/Holder;)Lnet/minecraft/world/entity/ai/attributes/AttributeInstance;"
+      },
+      "status_effect_instance.ctor": {
+        "name": "<init>",
+        "descriptor": "(Lnet/minecraft/core/Holder;II)V"
+      },
+      "status_effect_instance.get_effect_type": {
+        "name": "getEffect",
+        "descriptor": "()Lnet/minecraft/core/Holder;"
+      },
+      "status_effect_instance.get_amplifier": {
+        "name": "getAmplifier",
+        "descriptor": "()I"
+      },
+      "status_effect_instance.get_duration": {
+        "name": "getDuration",
+        "descriptor": "()I"
+      },
+      "registry_entry.get_id_as_string": {
+        "name": "getRegisteredName",
+        "descriptor": "()Ljava/lang/String;"
+      },
+      "attribute_instance.get_value": {
+        "name": "getValue",
+        "descriptor": "()D"
+      },
+      "attribute_instance.get_base_value": {
+        "name": "getBaseValue",
+        "descriptor": "()D"
+      },
+      "attribute_instance.set_base_value": {
+        "name": "setBaseValue",
+        "descriptor": "(D)V"
+      }
+    },
+    "fields": {
+      "minecraft_client.world": {
+        "name": "level",
+        "descriptor": "Lnet/minecraft/client/multiplayer/ClientLevel;"
+      },
+      "minecraft_client.delta_timer": {
+        "name": "deltaTracker",
+        "descriptor": "Lnet/minecraft/client/DeltaTracker$Timer;"
+      },
+      "minecraft_client.player": {
+        "name": "player",
+        "descriptor": "Lnet/minecraft/client/player/LocalPlayer;"
+      },
+      "minecraft_client.options": {
+        "name": "options",
+        "descriptor": "Lnet/minecraft/client/Options;"
+      },
+      "render_tick_counter.tick_time": {
+        "name": "msPerTick",
+        "descriptor": "F"
+      },
+      "camera.pitch": {
+        "name": "xRot",
+        "descriptor": "F"
+      },
+      "camera.yaw": {
+        "name": "yRot",
+        "descriptor": "F"
+      },
+      "camera.rotation": {
+        "name": "rotation",
+        "descriptor": "Lorg/joml/Quaternionf;"
+      },
+      "camera.horizontal": {
+        "name": "forwards",
+        "descriptor": "Lorg/joml/Vector3f;"
+      },
+      "camera.vertical": {
+        "name": "up",
+        "descriptor": "Lorg/joml/Vector3f;"
+      },
+      "camera.diagonal": {
+        "name": "left",
+        "descriptor": "Lorg/joml/Vector3f;"
+      },
+      "key_binding.pressed": {
+        "name": "isDown",
+        "descriptor": "Z"
+      },
+      "game_options.forward": {
+        "name": "keyUp",
+        "descriptor": "Lnet/minecraft/client/KeyMapping;"
+      },
+      "game_options.left": {
+        "name": "keyLeft",
+        "descriptor": "Lnet/minecraft/client/KeyMapping;"
+      },
+      "game_options.back": {
+        "name": "keyDown",
+        "descriptor": "Lnet/minecraft/client/KeyMapping;"
+      },
+      "game_options.right": {
+        "name": "keyRight",
+        "descriptor": "Lnet/minecraft/client/KeyMapping;"
+      },
+      "game_options.jump": {
+        "name": "keyJump",
+        "descriptor": "Lnet/minecraft/client/KeyMapping;"
+      },
+      "game_options.sneak": {
+        "name": "keyShift",
+        "descriptor": "Lnet/minecraft/client/KeyMapping;"
+      },
+      "game_options.sprint": {
+        "name": "keySprint",
+        "descriptor": "Lnet/minecraft/client/KeyMapping;"
+      },
+      "client_player.input": {
+        "name": "input",
+        "descriptor": "Lnet/minecraft/client/player/ClientInput;"
+      },
+      "movement_input.player_input": {
+        "name": "keyPresses",
+        "descriptor": "Lnet/minecraft/world/entity/player/Input;"
+      },
+      "movement_input.movement_vector": {
+        "name": "moveVector",
+        "descriptor": "Lnet/minecraft/world/phys/Vec2;"
+      },
+      "entity_attributes.movement_speed": {
+        "name": "MOVEMENT_SPEED",
+        "descriptor": "Lnet/minecraft/core/Holder;"
+      }
+    }
+  },
+  "fingerprints": {
+    "minecraft_client": {
+      "strings_any": [
+        "Setting user: ",
+        "Setting user: {}"
+      ]
+    },
+    "mouse": {
+      "strings_any": [
+        "mouseClicked event handler",
+        "mouseReleased event handler",
+        "mouseMoved event handler",
+        "mouseDragged event handler"
+      ]
+    },
+    "camera": {
+      "super_class": "java/lang/Object",
+      "field_type_min": {
+        "Lorg/joml/Quaternionf;": 1,
+        "Lorg/joml/Vector3f;": 3
+      }
+    },
+    "entity": {
+      "strings_any": [
+        "Saving entity NBT",
+        "Loading entity NBT",
+        "Checking entity block collision"
+      ]
+    },
+    "game_options": {
+      "strings_any": [
+        "options.txt",
+        "key.attack",
+        "key.forward"
+      ]
+    },
+    "key_binding": {
+      "super_class": "java/lang/Object",
+      "methods_required": [
+        [
+          "",
+          "(Ljava/lang/String;ILnet/minecraft/client/KeyMapping$Category;)V"
+        ],
+        [
+          "",
+          "(Ljava/lang/Object;)I"
+        ]
+      ]
+    }
+  },
+  "hooks": [
+    {
+      "logical_name": "glfw.keyboard.getKey",
+      "callback_method": "onGlfwGetKeyTail",
+      "insert_at": "tail",
+      "class_name": "org/lwjgl/glfw/GLFW",
+      "method_name": "glfwGetKey",
+      "method_descriptor": "(JI)I"
+    },
+    {
+      "logical_name": "mouse.updateMouse",
+      "callback_method": "onMouseUpdateTail",
+      "class_name": "net/minecraft/client/MouseHandler",
+      "logical_class": "mouse",
+      "method_name": "turnPlayer",
+      "method_descriptor": "(D)V"
+    },
+    {
+      "logical_name": "mouse.cursorPos",
+      "callback_method": "onCursorPos",
+      "class_name": "net/minecraft/client/MouseHandler",
+      "logical_class": "mouse",
+      "method_name": "onMove",
+      "method_descriptor": "(JDD)V"
+    },
+    {
+      "logical_name": "client.render.tail",
+      "callback_method": "onMouseUpdateTail",
+      "insert_at": "tail",
+      "class_name": "net/minecraft/client/Minecraft",
+      "logical_class": "minecraft_client",
+      "method_name": "renderFrame",
+      "method_descriptor": "(Z)V"
+    },
+    {
+      "logical_name": "client.tick.head",
+      "callback_method": "onClientTickHead",
+      "insert_at": "head",
+      "class_name": "net/minecraft/client/Minecraft",
+      "logical_class": "minecraft_client",
+      "method_name": "tick",
+      "method_descriptor": "()V"
+    },
+    {
+      "logical_name": "movement.input.head",
+      "callback_method": "onMovementInputRead",
+      "insert_at": "head",
+      "class_name": "net/minecraft/client/player/KeyboardInput",
+      "logical_class": "keyboard_input",
+      "method_name": "tick",
+      "method_descriptor": "()V"
+    },
+    {
+      "logical_name": "movement.input.tail",
+      "callback_method": "onMovementInputTail",
+      "insert_at": "tail",
+      "class_name": "net/minecraft/client/player/KeyboardInput",
+      "logical_class": "keyboard_input",
+      "method_name": "tick",
+      "method_descriptor": "()V"
+    },
+    {
+      "logical_name": "client.tick.tail",
+      "callback_method": "onClientTickTail",
+      "insert_at": "tail",
+      "class_name": "net/minecraft/client/Minecraft",
+      "logical_class": "minecraft_client",
+      "method_name": "tick",
+      "method_descriptor": "()V"
+    },
+    {
+      "logical_name": "camera.setRotation",
+      "callback_method": "onCameraSetRotationTail",
+      "class_name": "net/minecraft/client/Camera",
+      "logical_class": "camera",
+      "method_name": "setRotation",
+      "method_descriptor": "(FF)V"
+    },
+    {
+      "logical_name": "entity.changeLookDirection",
+      "callback_method": "onLookDirectionTail",
+      "insert_at": "tail",
+      "class_name": "net/minecraft/world/entity/Entity",
+      "logical_class": "entity",
+      "method_name": "turn",
+      "method_descriptor": "(DD)V"
+    }
+  ]
+}

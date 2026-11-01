@@ -1,0 +1,404 @@
+{
+  "mc_version": "1.21.7",
+  "mc_version_aliases": [
+    "1.21.6"
+  ],
+  "comment": "Vanilla MC 1.21.7 obfuscated names (Mojang). Sourced via tiny v2 mapping (named/official/intermediary). updateMouse takes (D)V.",
+  "natives": {
+    "classes": {
+      "minecraft_client": "fud",
+      "entity": "bzm",
+      "camera": "ftl",
+      "render_tick_counter": "ftt",
+      "key_binding": "fub",
+      "game_options": "fuh",
+      "simple_option": "fug",
+      "client_player": "gwh",
+      "movement_input": "gwf",
+      "keyboard_input": "gwg",
+      "player_input": "cur",
+      "vec2f": "fir",
+      "screen": "ges",
+      "status_effect_instance": "byq",
+      "registry_entry": "jl",
+      "entity_attributes": "cbs",
+      "attribute_instance": "cbo"
+    },
+    "methods": {
+      "minecraft_client.get_instance": {
+        "name": "R",
+        "descriptor": "()Lfud;"
+      },
+      "minecraft_client.set_screen": {
+        "name": "a",
+        "descriptor": "(Lges;)V"
+      },
+      "minecraft_client.get_render_tick_counter": {
+        "name": "aw",
+        "descriptor": "()Lftt;"
+      },
+      "entity.get_yaw": {
+        "name": "dP",
+        "descriptor": "()F"
+      },
+      "entity.get_pitch": {
+        "name": "dR",
+        "descriptor": "()F"
+      },
+      "entity.set_yaw": {
+        "name": "v",
+        "descriptor": "(F)V"
+      },
+      "entity.set_pitch": {
+        "name": "w",
+        "descriptor": "(F)V"
+      },
+      "entity.get_x": {
+        "name": "dC",
+        "descriptor": "()D"
+      },
+      "entity.get_y": {
+        "name": "dE",
+        "descriptor": "()D"
+      },
+      "entity.get_z": {
+        "name": "dI",
+        "descriptor": "()D"
+      },
+      "render_tick_counter.get_tick_progress": {
+        "name": "a",
+        "descriptor": "(Z)F"
+      },
+      "key_binding.is_pressed": {
+        "name": "e",
+        "descriptor": "()Z"
+      },
+      "key_binding.set_pressed": {
+        "name": "a",
+        "descriptor": "(Z)V"
+      },
+      "game_options.get_mouse_sensitivity": {
+        "name": "d",
+        "descriptor": "()Lfug;"
+      },
+      "simple_option.get_value": {
+        "name": "c",
+        "descriptor": "()Ljava/lang/Object;"
+      },
+      "living_entity.get_status_effects": {
+        "name": "eI",
+        "descriptor": "()Ljava/util/Collection;"
+      },
+      "living_entity.set_status_effect": {
+        "name": "c",
+        "descriptor": "(Lbyq;Lbzm;)V"
+      },
+      "living_entity.remove_status_effect": {
+        "name": "g",
+        "descriptor": "(Ljl;)Z"
+      },
+      "living_entity.get_attribute_instance": {
+        "name": "h",
+        "descriptor": "(Ljl;)Lcbo;"
+      },
+      "status_effect_instance.ctor": {
+        "name": "<init>",
+        "descriptor": "(Ljl;II)V"
+      },
+      "status_effect_instance.get_effect_type": {
+        "name": "c",
+        "descriptor": "()Ljl;"
+      },
+      "status_effect_instance.get_amplifier": {
+        "name": "e",
+        "descriptor": "()I"
+      },
+      "status_effect_instance.get_duration": {
+        "name": "d",
+        "descriptor": "()I"
+      },
+      "registry_entry.get_id_as_string": {
+        "name": "g",
+        "descriptor": "()Ljava/lang/String;"
+      },
+      "attribute_instance.get_value": {
+        "name": "g",
+        "descriptor": "()D"
+      },
+      "attribute_instance.get_base_value": {
+        "name": "b",
+        "descriptor": "()D"
+      },
+      "attribute_instance.set_base_value": {
+        "name": "a",
+        "descriptor": "(D)V"
+      }
+    },
+    "fields": {
+      "minecraft_client.world": {
+        "name": "s",
+        "descriptor": "Lgrj;"
+      },
+      "minecraft_client.delta_timer": {
+        "name": "U",
+        "descriptor": "Lftt$b;"
+      },
+      "minecraft_client.player": {
+        "name": "t",
+        "descriptor": "Lgwh;"
+      },
+      "minecraft_client.options": {
+        "name": "n",
+        "descriptor": "Lfuh;"
+      },
+      "render_tick_counter.tick_time": {
+        "name": "i",
+        "descriptor": "F"
+      },
+      "camera.pitch": {
+        "name": "n",
+        "descriptor": "F"
+      },
+      "camera.yaw": {
+        "name": "o",
+        "descriptor": "F"
+      },
+      "camera.rotation": {
+        "name": "p",
+        "descriptor": "Lorg/joml/Quaternionf;"
+      },
+      "camera.horizontal": {
+        "name": "k",
+        "descriptor": "Lorg/joml/Vector3f;"
+      },
+      "camera.vertical": {
+        "name": "l",
+        "descriptor": "Lorg/joml/Vector3f;"
+      },
+      "camera.diagonal": {
+        "name": "m",
+        "descriptor": "Lorg/joml/Vector3f;"
+      },
+      "key_binding.pressed": {
+        "name": "p",
+        "descriptor": "Z"
+      },
+      "game_options.forward": {
+        "name": "v",
+        "descriptor": "Lfub;"
+      },
+      "game_options.left": {
+        "name": "w",
+        "descriptor": "Lfub;"
+      },
+      "game_options.back": {
+        "name": "x",
+        "descriptor": "Lfub;"
+      },
+      "game_options.right": {
+        "name": "y",
+        "descriptor": "Lfub;"
+      },
+      "game_options.jump": {
+        "name": "z",
+        "descriptor": "Lfub;"
+      },
+      "game_options.sneak": {
+        "name": "A",
+        "descriptor": "Lfub;"
+      },
+      "game_options.sprint": {
+        "name": "B",
+        "descriptor": "Lfub;"
+      },
+      "client_player.input": {
+        "name": "k",
+        "descriptor": "Lgwf;"
+      },
+      "movement_input.player_input": {
+        "name": "a",
+        "descriptor": "Lcur;"
+      },
+      "movement_input.movement_vector": {
+        "name": "b",
+        "descriptor": "Lfir;"
+      },
+      "entity_attributes.movement_speed": {
+        "name": "w",
+        "descriptor": "Ljl;"
+      }
+    }
+  },
+  "fingerprints": {
+    "minecraft_client": {
+      "strings_any": [
+        "Setting user: ",
+        "Setting user: {}"
+      ]
+    },
+    "mouse": {
+      "strings_any": [
+        "mouseClicked event handler",
+        "mouseReleased event handler",
+        "mouseMoved event handler",
+        "mouseDragged event handler"
+      ]
+    },
+    "camera": {
+      "super_class": "java/lang/Object",
+      "field_type_min": {
+        "Lorg/joml/Quaternionf;": 1,
+        "Lorg/joml/Vector3f;": 3
+      }
+    },
+    "entity": {
+      "strings_any": [
+        "Saving entity NBT",
+        "Loading entity NBT",
+        "Checking entity block collision"
+      ]
+    },
+    "game_options": {
+      "strings_any": [
+        "options.txt",
+        "key.attack",
+        "key.forward"
+      ]
+    },
+    "key_binding": {
+      "super_class": "java/lang/Object",
+      "methods_required": [
+        [
+          "",
+          "(Ljava/lang/String;ILjava/lang/String;)V"
+        ],
+        [
+          "",
+          "(Ljava/lang/Object;)I"
+        ]
+      ]
+    }
+  },
+  "hooks": [
+    {
+      "logical_name": "glfw.keyboard.getKey",
+      "comment": "Keystroke overlays poll GLFW directly, not KeyBinding.pressed",
+      "callback_method": "onGlfwGetKeyTail",
+      "insert_at": "tail",
+      "class_name": "org/lwjgl/glfw/GLFW",
+      "method_name": "glfwGetKey",
+      "method_descriptor": "(JI)I"
+    },
+    {
+      "logical_name": "mouse.updateMouse",
+      "callback_method": "onMouseUpdateTail",
+      "class_name": "fue",
+      "logical_class": "mouse",
+      "method_name": "a",
+      "method_descriptor": "(D)V",
+      "method_name_aliases": [
+        "updateMouse",
+        "method_1602"
+      ]
+    },
+    {
+      "logical_name": "mouse.cursorPos",
+      "callback_method": "onCursorPos",
+      "class_name": "fue",
+      "logical_class": "mouse",
+      "method_name": "b",
+      "method_descriptor": "(JDD)V",
+      "method_name_aliases": [
+        "onCursorPos",
+        "method_1600"
+      ]
+    },
+    {
+      "logical_name": "client.render.tail",
+      "callback_method": "onMouseUpdateTail",
+      "insert_at": "tail",
+      "class_name": "fud",
+      "logical_class": "minecraft_client",
+      "method_name": "c",
+      "method_descriptor": "(Z)V",
+      "method_name_aliases": [
+        "render",
+        "method_1523"
+      ]
+    },
+    {
+      "logical_name": "client.tick.head",
+      "callback_method": "onClientTickHead",
+      "insert_at": "head",
+      "class_name": "fud",
+      "logical_class": "minecraft_client",
+      "method_name": "t",
+      "method_descriptor": "()V",
+      "method_name_aliases": [
+        "tick",
+        "method_1574"
+      ]
+    },
+    {
+      "logical_name": "movement.input.head",
+      "callback_method": "onMovementInputRead",
+      "insert_at": "head",
+      "class_name": "gwg",
+      "method_owner": "gwf",
+      "class_name_aliases": [
+        "net/minecraft/client/input/KeyboardInput",
+        "net/minecraft/class_743"
+      ],
+      "logical_class": "keyboard_input",
+      "method_name": "a",
+      "method_descriptor": "()V",
+      "method_name_aliases": [
+        "tick",
+        "method_3129"
+      ]
+    },
+    {
+      "logical_name": "movement.input.tail",
+      "callback_method": "onMovementInputTail",
+      "insert_at": "tail",
+      "class_name": "gwg",
+      "method_owner": "gwf",
+      "class_name_aliases": [
+        "net/minecraft/client/input/KeyboardInput",
+        "net/minecraft/class_743"
+      ],
+      "logical_class": "keyboard_input",
+      "method_name": "a",
+      "method_descriptor": "()V",
+      "method_name_aliases": [
+        "tick",
+        "method_3129"
+      ]
+    },
+    {
+      "logical_name": "client.tick.tail",
+      "callback_method": "onClientTickTail",
+      "insert_at": "tail",
+      "class_name": "fud",
+      "logical_class": "minecraft_client",
+      "method_name": "t",
+      "method_descriptor": "()V",
+      "method_name_aliases": [
+        "tick",
+        "method_1574"
+      ]
+    },
+    {
+      "logical_name": "camera.setRotation",
+      "callback_method": "onCameraSetRotationTail",
+      "class_name": "ftl",
+      "logical_class": "camera",
+      "method_name": "a",
+      "method_descriptor": "(FF)V",
+      "method_name_aliases": [
+        "setRotation",
+        "method_19325"
+      ]
+    }
+  ]
+}

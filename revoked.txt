@@ -1,0 +1,6 @@
+# Descriptors clients must drop, copied into every pack as `revoke` lines.
+# One per line: <mc_version> <max_pack_rev>
+#   every copy of that mc_version (shipped zip or pack) with pack_rev <= max_pack_rev
+#   is dropped; pack_rev absent in a descriptor counts as 0.
+# Example: `26.2 3` drops 26.2 up to pack_rev 3; publish a fix with pack_rev 4.
+# Blank lines and anything after `#` are ignored. One line per mc_version.

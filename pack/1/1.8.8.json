@@ -1,0 +1,309 @@
+{
+  "mc_version": "1.8.8",
+  "comment": "Vanilla MC 1.8.8 obfuscated names from MCP joined.srg. Entity rotation/position and mouse sensitivity are fields; key playback uses static KeyBinding.setKeyBindState(IZ)V.",
+  "natives": {
+    "classes": {
+      "minecraft_client": "ave",
+      "entity": "pk",
+      "camera": "",
+      "render_tick_counter": "",
+      "key_binding": "avb",
+      "movement_input": "beu",
+      "movement_input_options": "bev",
+      "timer": "avl",
+      "game_options": "avh",
+      "simple_option": "",
+      "client_player": "bew",
+      "screen": "axu"
+    },
+    "methods": {
+      "minecraft_client.get_instance": {
+        "name": "A",
+        "descriptor": "()Lave;"
+      },
+      "minecraft_client.set_screen": {
+        "name": "a",
+        "descriptor": "(Laxu;)V"
+      },
+      "entity.is_sprinting": {
+        "name": "aw",
+        "descriptor": "()Z"
+      },
+      "entity.set_sprinting": {
+        "name": "d",
+        "descriptor": "(Z)V"
+      },
+      "key_binding.is_pressed": {
+        "name": "d",
+        "descriptor": "()Z"
+      },
+      "key_binding.get_key_code": {
+        "name": "i",
+        "descriptor": "()I"
+      },
+      "key_binding.set_key_bind_state": {
+        "name": "a",
+        "descriptor": "(IZ)V"
+      }
+    },
+    "fields": {
+      "minecraft_client.player": {
+        "name": "h",
+        "descriptor": "Lbew;"
+      },
+      "minecraft_client.timer": {
+        "name": "Y",
+        "descriptor": "Lavl;"
+      },
+      "minecraft_client.options": {
+        "name": "t",
+        "descriptor": "Lavh;"
+      },
+      "entity.x": {
+        "name": "s",
+        "descriptor": "D"
+      },
+      "entity.y": {
+        "name": "t",
+        "descriptor": "D"
+      },
+      "entity.z": {
+        "name": "u",
+        "descriptor": "D"
+      },
+      "entity.motion_x": {
+        "name": "v",
+        "descriptor": "D"
+      },
+      "entity.motion_y": {
+        "name": "w",
+        "descriptor": "D"
+      },
+      "entity.motion_z": {
+        "name": "x",
+        "descriptor": "D"
+      },
+      "entity.on_ground": {
+        "name": "C",
+        "descriptor": "Z"
+      },
+      "entity.yaw": {
+        "name": "y",
+        "descriptor": "F"
+      },
+      "entity.pitch": {
+        "name": "z",
+        "descriptor": "F"
+      },
+      "entity.prev_yaw": {
+        "name": "A",
+        "descriptor": "F"
+      },
+      "entity.prev_pitch": {
+        "name": "B",
+        "descriptor": "F"
+      },
+      "key_binding.pressed": {
+        "name": "h",
+        "descriptor": "Z"
+      },
+      "timer.timer_speed": {
+        "name": "d",
+        "descriptor": "F"
+      },
+      "game_options.mouse_sensitivity": {
+        "name": "a",
+        "descriptor": "F"
+      },
+      "game_options.forward": {
+        "name": "X",
+        "descriptor": "Lavb;"
+      },
+      "game_options.left": {
+        "name": "Y",
+        "descriptor": "Lavb;"
+      },
+      "game_options.back": {
+        "name": "Z",
+        "descriptor": "Lavb;"
+      },
+      "game_options.right": {
+        "name": "aa",
+        "descriptor": "Lavb;"
+      },
+      "game_options.jump": {
+        "name": "ab",
+        "descriptor": "Lavb;"
+      },
+      "game_options.sneak": {
+        "name": "ac",
+        "descriptor": "Lavb;"
+      },
+      "game_options.sprint": {
+        "name": "ad",
+        "descriptor": "Lavb;"
+      },
+      "client_player.input": {
+        "name": "b",
+        "descriptor": "Lbeu;"
+      },
+      "movement_input.sideways": {
+        "name": "a",
+        "descriptor": "F"
+      },
+      "movement_input.forward": {
+        "name": "b",
+        "descriptor": "F"
+      },
+      "movement_input.jump": {
+        "name": "c",
+        "descriptor": "Z"
+      },
+      "movement_input.sneak": {
+        "name": "d",
+        "descriptor": "Z"
+      }
+    }
+  },
+  "hooks": [
+    {
+      "logical_name": "lwjgl.keyboard.eventKeyState",
+      "comment": "1.8.x opens inventory/chat from the LWJGL event queue, not KeyBinding",
+      "callback_method": "onLwjglEventKeyStateTail",
+      "insert_at": "tail",
+      "class_name": "org/lwjgl/input/Keyboard",
+      "method_name": "getEventKeyState",
+      "method_descriptor": "()Z"
+    },
+    {
+      "logical_name": "lwjgl.keyboard.isKeyDown",
+      "comment": "Keystroke overlays poll LWJGL directly, not KeyBinding.pressed",
+      "callback_method": "onLwjglKeyDownTail",
+      "insert_at": "tail",
+      "class_name": "org/lwjgl/input/Keyboard",
+      "method_name": "isKeyDown",
+      "method_descriptor": "(I)Z"
+    },
+    {
+      "logical_name": "mouse.updateMouse",
+      "callback_method": "onMouseTurnTail",
+      "class_name": "pk",
+      "method_name": "c",
+      "method_descriptor": "(FF)V",
+      "logical_class": "entity",
+      "method_name_aliases": [
+        "updateMouse",
+        "method_1602",
+        "setAngles",
+        "setRotation",
+        "func_70082_c",
+        "method_5872"
+      ]
+    },
+    {
+      "logical_name": "client.tick.head",
+      "callback_method": "onClientTickHead",
+      "insert_at": "head",
+      "class_name": "ave",
+      "method_name": "s",
+      "method_descriptor": "()V",
+      "logical_class": "minecraft_client",
+      "method_name_aliases": [
+        "tick",
+        "method_1574",
+        "runTick",
+        "func_71407_l"
+      ]
+    },
+    {
+      "logical_name": "client.tick.tail",
+      "callback_method": "onClientTickTail",
+      "insert_at": "tail",
+      "class_name": "ave",
+      "method_name": "s",
+      "method_descriptor": "()V",
+      "logical_class": "minecraft_client",
+      "method_name_aliases": [
+        "tick",
+        "method_1574",
+        "runTick",
+        "func_71407_l"
+      ]
+    },
+    {
+      "logical_name": "movement.input.head",
+      "callback_method": "onMovementInputRead",
+      "insert_at": "head",
+      "class_name": "bev",
+      "method_owner": "beu",
+      "class_name_aliases": [
+        "net/minecraft/util/MovementInputFromOptions",
+        "net/minecraft/client/util/MovementInputFromOptions"
+      ],
+      "method_name": "a",
+      "method_descriptor": "()V",
+      "method_name_aliases": [
+        "tick",
+        "updatePlayerMoveState",
+        "method_3128"
+      ]
+    },
+    {
+      "logical_name": "movement.input.tail",
+      "callback_method": "onMovementInputTail",
+      "insert_at": "tail",
+      "class_name": "bev",
+      "method_owner": "beu",
+      "class_name_aliases": [
+        "net/minecraft/util/MovementInputFromOptions",
+        "net/minecraft/client/util/MovementInputFromOptions"
+      ],
+      "method_name": "a",
+      "method_descriptor": "()V",
+      "method_name_aliases": [
+        "tick",
+        "updatePlayerMoveState",
+        "method_3128"
+      ]
+    }
+  ],
+  "fingerprints": {
+    "minecraft_client": {
+      "strings_all": [
+        "Setting user: ",
+        "Pre startup"
+      ]
+    },
+    "entity": {
+      "strings_any": [
+        "Checking entity block collision",
+        "Saving entity NBT",
+        "Loading entity NBT",
+        "Entity being checked for collision"
+      ]
+    },
+    "game_options": {
+      "strings_any": [
+        "options.txt",
+        "key.forward",
+        "key.attack"
+      ]
+    },
+    "key_binding": {
+      "super_class": "java/lang/Object",
+      "methods_required": [
+        [
+          "<init>",
+          "(Ljava/lang/String;ILjava/lang/String;)V"
+        ],
+        [
+          "",
+          "(Ljava/lang/Object;)I"
+        ]
+      ],
+      "field_type_min": {
+        "Z": 1
+      }
+    }
+  }
+}
